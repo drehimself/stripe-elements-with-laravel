@@ -15,8 +15,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('card-element', require('./components/CardElement.vue'));
-Vue.component('payment-form', require('./components/PaymentForm.vue'));
+Vue.component('card-element', require('./components/CardElement.vue').default);
+Vue.component('payment-form', require('./components/PaymentForm.vue').default);
 
 const app = new Vue({
     el: '#app'
