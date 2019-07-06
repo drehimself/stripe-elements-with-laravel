@@ -1494,7 +1494,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -1829,28 +1829,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-module.exports = function isBuffer (obj) {
-  return obj != null && obj.constructor != null &&
-    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/CardElement.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/CardElement.vue?vue&type=script&lang=js& ***!
@@ -2060,8 +2038,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 /*!
- * Bootstrap v3.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under the MIT license
  */
 
@@ -2078,10 +2056,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#transitions
+ * Bootstrap: transition.js v3.3.7
+ * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2089,7 +2067,7 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
 
-  // CSS TRANSITION SUPPORT (Shoutout: https://modernizr.com/)
+  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
   // ============================================================
 
   function transitionEnd() {
@@ -2111,7 +2089,7 @@ if (typeof jQuery === 'undefined') {
     return false // explicit for ie8 (  ._.)
   }
 
-  // https://blog.alexmaccaw.com/css-transitions
+  // http://blog.alexmaccaw.com/css-transitions
   $.fn.emulateTransitionEnd = function (duration) {
     var called = false
     var $el = this
@@ -2138,10 +2116,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#alerts
+ * Bootstrap: alert.js v3.3.7
+ * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2157,7 +2135,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.4.1'
+  Alert.VERSION = '3.3.7'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -2170,8 +2148,7 @@ if (typeof jQuery === 'undefined') {
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    selector    = selector === '#' ? [] : selector
-    var $parent = $(document).find(selector)
+    var $parent = $(selector === '#' ? [] : selector)
 
     if (e) e.preventDefault()
 
@@ -2234,10 +2211,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#buttons
+ * Bootstrap: button.js v3.3.7
+ * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2254,7 +2231,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.4.1'
+  Button.VERSION  = '3.3.7'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -2360,10 +2337,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#carousel
+ * Bootstrap: carousel.js v3.3.7
+ * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2391,7 +2368,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.4.1'
+  Carousel.VERSION  = '3.3.7'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -2505,9 +2482,7 @@ if (typeof jQuery === 'undefined') {
     var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
     if ($.support.transition && this.$element.hasClass('slide')) {
       $next.addClass(type)
-      if (typeof $next === 'object' && $next.length) {
-        $next[0].offsetWidth // force reflow
-      }
+      $next[0].offsetWidth // force reflow
       $active.addClass(direction)
       $next.addClass(direction)
       $active
@@ -2569,17 +2544,10 @@ if (typeof jQuery === 'undefined') {
   // =================
 
   var clickHandler = function (e) {
+    var href
     var $this   = $(this)
-    var href    = $this.attr('href')
-    if (href) {
-      href = href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
-    }
-
-    var target  = $this.attr('data-target') || href
-    var $target = $(document).find(target)
-
+    var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
     if (!$target.hasClass('carousel')) return
-
     var options = $.extend({}, $target.data(), $this.data())
     var slideIndex = $this.attr('data-slide-to')
     if (slideIndex) options.interval = false
@@ -2607,10 +2575,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#collapse
+ * Bootstrap: collapse.js v3.3.7
+ * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2638,7 +2606,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.4.1'
+  Collapse.VERSION  = '3.3.7'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -2745,7 +2713,7 @@ if (typeof jQuery === 'undefined') {
   }
 
   Collapse.prototype.getParent = function () {
-    return $(document).find(this.options.parent)
+    return $(this.options.parent)
       .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
       .each($.proxy(function (i, element) {
         var $element = $(element)
@@ -2768,7 +2736,7 @@ if (typeof jQuery === 'undefined') {
     var target = $trigger.attr('data-target')
       || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
 
-    return $(document).find(target)
+    return $(target)
   }
 
 
@@ -2820,10 +2788,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#dropdowns
+ * Bootstrap: dropdown.js v3.3.7
+ * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2840,7 +2808,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.4.1'
+  Dropdown.VERSION = '3.3.7'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -2850,7 +2818,7 @@ if (typeof jQuery === 'undefined') {
       selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    var $parent = selector !== '#' ? $(document).find(selector) : null
+    var $parent = selector && $(selector)
 
     return $parent && $parent.length ? $parent : $this.parent()
   }
@@ -2986,10 +2954,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#modals
+ * Bootstrap: modal.js v3.3.7
+ * http://getbootstrap.com/javascript/#modals
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -3001,16 +2969,15 @@ if (typeof jQuery === 'undefined') {
   // ======================
 
   var Modal = function (element, options) {
-    this.options = options
-    this.$body = $(document.body)
-    this.$element = $(element)
-    this.$dialog = this.$element.find('.modal-dialog')
-    this.$backdrop = null
-    this.isShown = null
-    this.originalBodyPad = null
-    this.scrollbarWidth = 0
+    this.options             = options
+    this.$body               = $(document.body)
+    this.$element            = $(element)
+    this.$dialog             = this.$element.find('.modal-dialog')
+    this.$backdrop           = null
+    this.isShown             = null
+    this.originalBodyPad     = null
+    this.scrollbarWidth      = 0
     this.ignoreBackdropClick = false
-    this.fixedContent = '.navbar-fixed-top, .navbar-fixed-bottom'
 
     if (this.options.remote) {
       this.$element
@@ -3021,7 +2988,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.VERSION = '3.4.1'
+  Modal.VERSION  = '3.3.7'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -3038,7 +3005,7 @@ if (typeof jQuery === 'undefined') {
 
   Modal.prototype.show = function (_relatedTarget) {
     var that = this
-    var e = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
+    var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
 
     this.$element.trigger(e)
 
@@ -3129,8 +3096,8 @@ if (typeof jQuery === 'undefined') {
       .off('focusin.bs.modal') // guard against infinite focus loop
       .on('focusin.bs.modal', $.proxy(function (e) {
         if (document !== e.target &&
-          this.$element[0] !== e.target &&
-          !this.$element.has(e.target).length) {
+            this.$element[0] !== e.target &&
+            !this.$element.has(e.target).length) {
           this.$element.trigger('focus')
         }
       }, this))
@@ -3232,7 +3199,7 @@ if (typeof jQuery === 'undefined') {
     var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
 
     this.$element.css({
-      paddingLeft: !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
+      paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
       paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
     })
   }
@@ -3257,26 +3224,11 @@ if (typeof jQuery === 'undefined') {
   Modal.prototype.setScrollbar = function () {
     var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
     this.originalBodyPad = document.body.style.paddingRight || ''
-    var scrollbarWidth = this.scrollbarWidth
-    if (this.bodyIsOverflowing) {
-      this.$body.css('padding-right', bodyPad + scrollbarWidth)
-      $(this.fixedContent).each(function (index, element) {
-        var actualPadding = element.style.paddingRight
-        var calculatedPadding = $(element).css('padding-right')
-        $(element)
-          .data('padding-right', actualPadding)
-          .css('padding-right', parseFloat(calculatedPadding) + scrollbarWidth + 'px')
-      })
-    }
+    if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
   }
 
   Modal.prototype.resetScrollbar = function () {
     this.$body.css('padding-right', this.originalBodyPad)
-    $(this.fixedContent).each(function (index, element) {
-      var padding = $(element).data('padding-right')
-      $(element).removeData('padding-right')
-      element.style.paddingRight = padding ? padding : ''
-    })
   }
 
   Modal.prototype.measureScrollbar = function () { // thx walsh
@@ -3294,8 +3246,8 @@ if (typeof jQuery === 'undefined') {
 
   function Plugin(option, _relatedTarget) {
     return this.each(function () {
-      var $this = $(this)
-      var data = $this.data('bs.modal')
+      var $this   = $(this)
+      var data    = $this.data('bs.modal')
       var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
 
       if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
@@ -3306,7 +3258,7 @@ if (typeof jQuery === 'undefined') {
 
   var old = $.fn.modal
 
-  $.fn.modal = Plugin
+  $.fn.modal             = Plugin
   $.fn.modal.Constructor = Modal
 
 
@@ -3323,13 +3275,10 @@ if (typeof jQuery === 'undefined') {
   // ==============
 
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
-    var $this = $(this)
-    var href = $this.attr('href')
-    var target = $this.attr('data-target') ||
-      (href && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
-
-    var $target = $(document).find(target)
-    var option = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+    var $this   = $(this)
+    var href    = $this.attr('href')
+    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
+    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
     if ($this.is('a')) e.preventDefault()
 
@@ -3345,147 +3294,17 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#tooltip
+ * Bootstrap: tooltip.js v3.3.7
+ * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
+
 +function ($) {
   'use strict';
-
-  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn']
-
-  var uriAttrs = [
-    'background',
-    'cite',
-    'href',
-    'itemtype',
-    'longdesc',
-    'poster',
-    'src',
-    'xlink:href'
-  ]
-
-  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
-
-  var DefaultWhitelist = {
-    // Global attributes allowed on any supplied element below.
-    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
-    a: ['target', 'href', 'title', 'rel'],
-    area: [],
-    b: [],
-    br: [],
-    col: [],
-    code: [],
-    div: [],
-    em: [],
-    hr: [],
-    h1: [],
-    h2: [],
-    h3: [],
-    h4: [],
-    h5: [],
-    h6: [],
-    i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
-    li: [],
-    ol: [],
-    p: [],
-    pre: [],
-    s: [],
-    small: [],
-    span: [],
-    sub: [],
-    sup: [],
-    strong: [],
-    u: [],
-    ul: []
-  }
-
-  /**
-   * A pattern that recognizes a commonly useful subset of URLs that are safe.
-   *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
-   */
-  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi
-
-  /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
-   *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
-   */
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i
-
-  function allowedAttribute(attr, allowedAttributeList) {
-    var attrName = attr.nodeName.toLowerCase()
-
-    if ($.inArray(attrName, allowedAttributeList) !== -1) {
-      if ($.inArray(attrName, uriAttrs) !== -1) {
-        return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN))
-      }
-
-      return true
-    }
-
-    var regExp = $(allowedAttributeList).filter(function (index, value) {
-      return value instanceof RegExp
-    })
-
-    // Check if a regular expression validates the attribute.
-    for (var i = 0, l = regExp.length; i < l; i++) {
-      if (attrName.match(regExp[i])) {
-        return true
-      }
-    }
-
-    return false
-  }
-
-  function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
-    if (unsafeHtml.length === 0) {
-      return unsafeHtml
-    }
-
-    if (sanitizeFn && typeof sanitizeFn === 'function') {
-      return sanitizeFn(unsafeHtml)
-    }
-
-    // IE 8 and below don't support createHTMLDocument
-    if (!document.implementation || !document.implementation.createHTMLDocument) {
-      return unsafeHtml
-    }
-
-    var createdDocument = document.implementation.createHTMLDocument('sanitization')
-    createdDocument.body.innerHTML = unsafeHtml
-
-    var whitelistKeys = $.map(whiteList, function (el, i) { return i })
-    var elements = $(createdDocument.body).find('*')
-
-    for (var i = 0, len = elements.length; i < len; i++) {
-      var el = elements[i]
-      var elName = el.nodeName.toLowerCase()
-
-      if ($.inArray(elName, whitelistKeys) === -1) {
-        el.parentNode.removeChild(el)
-
-        continue
-      }
-
-      var attributeList = $.map(el.attributes, function (el) { return el })
-      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
-
-      for (var j = 0, len2 = attributeList.length; j < len2; j++) {
-        if (!allowedAttribute(attributeList[j], whitelistedAttributes)) {
-          el.removeAttribute(attributeList[j].nodeName)
-        }
-      }
-    }
-
-    return createdDocument.body.innerHTML
-  }
 
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
@@ -3502,7 +3321,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.4.1'
+  Tooltip.VERSION  = '3.3.7'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -3519,10 +3338,7 @@ if (typeof jQuery === 'undefined') {
     viewport: {
       selector: 'body',
       padding: 0
-    },
-    sanitize : true,
-    sanitizeFn : null,
-    whiteList : DefaultWhitelist
+    }
   }
 
   Tooltip.prototype.init = function (type, element, options) {
@@ -3530,7 +3346,7 @@ if (typeof jQuery === 'undefined') {
     this.type      = type
     this.$element  = $(element)
     this.options   = this.getOptions(options)
-    this.$viewport = this.options.viewport && $(document).find($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
+    this.$viewport = this.options.viewport && $($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
     this.inState   = { click: false, hover: false, focus: false }
 
     if (this.$element[0] instanceof document.constructor && !this.options.selector) {
@@ -3563,25 +3379,13 @@ if (typeof jQuery === 'undefined') {
   }
 
   Tooltip.prototype.getOptions = function (options) {
-    var dataAttributes = this.$element.data()
-
-    for (var dataAttr in dataAttributes) {
-      if (dataAttributes.hasOwnProperty(dataAttr) && $.inArray(dataAttr, DISALLOWED_ATTRIBUTES) !== -1) {
-        delete dataAttributes[dataAttr]
-      }
-    }
-
-    options = $.extend({}, this.getDefaults(), dataAttributes, options)
+    options = $.extend({}, this.getDefaults(), this.$element.data(), options)
 
     if (options.delay && typeof options.delay == 'number') {
       options.delay = {
         show: options.delay,
         hide: options.delay
       }
-    }
-
-    if (options.sanitize) {
-      options.template = sanitizeHtml(options.template, options.whiteList, options.sanitizeFn)
     }
 
     return options
@@ -3695,7 +3499,7 @@ if (typeof jQuery === 'undefined') {
         .addClass(placement)
         .data('bs.' + this.type, this)
 
-      this.options.container ? $tip.appendTo($(document).find(this.options.container)) : $tip.insertAfter(this.$element)
+      this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
       this.$element.trigger('inserted.bs.' + this.type)
 
       var pos          = this.getPosition()
@@ -3797,16 +3601,7 @@ if (typeof jQuery === 'undefined') {
     var $tip  = this.tip()
     var title = this.getTitle()
 
-    if (this.options.html) {
-      if (this.options.sanitize) {
-        title = sanitizeHtml(title, this.options.whiteList, this.options.sanitizeFn)
-      }
-
-      $tip.find('.tooltip-inner').html(title)
-    } else {
-      $tip.find('.tooltip-inner').text(title)
-    }
-
+    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
     $tip.removeClass('fade in top bottom left right')
   }
 
@@ -3987,9 +3782,6 @@ if (typeof jQuery === 'undefined') {
     })
   }
 
-  Tooltip.prototype.sanitizeHtml = function (unsafeHtml) {
-    return sanitizeHtml(unsafeHtml, this.options.whiteList, this.options.sanitizeFn)
-  }
 
   // TOOLTIP PLUGIN DEFINITION
   // =========================
@@ -4023,10 +3815,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#popovers
+ * Bootstrap: popover.js v3.3.7
+ * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -4043,7 +3835,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.4.1'
+  Popover.VERSION  = '3.3.7'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -4069,25 +3861,10 @@ if (typeof jQuery === 'undefined') {
     var title   = this.getTitle()
     var content = this.getContent()
 
-    if (this.options.html) {
-      var typeContent = typeof content
-
-      if (this.options.sanitize) {
-        title = this.sanitizeHtml(title)
-
-        if (typeContent === 'string') {
-          content = this.sanitizeHtml(content)
-        }
-      }
-
-      $tip.find('.popover-title').html(title)
-      $tip.find('.popover-content').children().detach().end()[
-        typeContent === 'string' ? 'html' : 'append'
-      ](content)
-    } else {
-      $tip.find('.popover-title').text(title)
-      $tip.find('.popover-content').children().detach().end().text(content)
-    }
+    $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
+    $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
+      this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
+    ](content)
 
     $tip.removeClass('fade top bottom left right in')
 
@@ -4106,8 +3883,8 @@ if (typeof jQuery === 'undefined') {
 
     return $e.attr('data-content')
       || (typeof o.content == 'function' ?
-        o.content.call($e[0]) :
-        o.content)
+            o.content.call($e[0]) :
+            o.content)
   }
 
   Popover.prototype.arrow = function () {
@@ -4147,10 +3924,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#scrollspy
+ * Bootstrap: scrollspy.js v3.3.7
+ * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -4176,7 +3953,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.4.1'
+  ScrollSpy.VERSION  = '3.3.7'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -4320,10 +4097,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#tabs
+ * Bootstrap: tab.js v3.3.7
+ * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -4340,7 +4117,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.4.1'
+  Tab.VERSION = '3.3.7'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -4369,7 +4146,7 @@ if (typeof jQuery === 'undefined') {
 
     if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
 
-    var $target = $(document).find(selector)
+    var $target = $(selector)
 
     this.activate($this.closest('li'), $ul)
     this.activate($target, $target.parent(), function () {
@@ -4394,15 +4171,15 @@ if (typeof jQuery === 'undefined') {
       $active
         .removeClass('active')
         .find('> .dropdown-menu > .active')
-        .removeClass('active')
+          .removeClass('active')
         .end()
         .find('[data-toggle="tab"]')
-        .attr('aria-expanded', false)
+          .attr('aria-expanded', false)
 
       element
         .addClass('active')
         .find('[data-toggle="tab"]')
-        .attr('aria-expanded', true)
+          .attr('aria-expanded', true)
 
       if (transition) {
         element[0].offsetWidth // reflow for transition
@@ -4414,10 +4191,10 @@ if (typeof jQuery === 'undefined') {
       if (element.parent('.dropdown-menu').length) {
         element
           .closest('li.dropdown')
-          .addClass('active')
+            .addClass('active')
           .end()
           .find('[data-toggle="tab"]')
-          .attr('aria-expanded', true)
+            .attr('aria-expanded', true)
       }
 
       callback && callback()
@@ -4476,10 +4253,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.4.1
- * https://getbootstrap.com/docs/3.4/javascript/#affix
+ * Bootstrap: affix.js v3.3.7
+ * http://getbootstrap.com/javascript/#affix
  * ========================================================================
- * Copyright 2011-2019 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -4493,9 +4270,7 @@ if (typeof jQuery === 'undefined') {
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
-    var target = this.options.target === Affix.DEFAULTS.target ? $(this.options.target) : $(document).find(this.options.target)
-
-    this.$target = target
+    this.$target = $(this.options.target)
       .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
       .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
 
@@ -4507,7 +4282,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.4.1'
+  Affix.VERSION  = '3.3.7'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -4639,6 +4414,28 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+
+/***/ }),
+
+/***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
 
 
 /***/ }),
@@ -33183,7 +32980,7 @@ function normalizeComponent (
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(e,t){ true?module.exports=t():undefined}(this,function(){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=16)}([function(e,t,n){var r=n(2)(n(15),n(18),null,null);r.options.__file="/Users/fromatob/Projects/vue-stripe-elements/src/StripeElement.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__esModule"!==e})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] StripeElement.vue: functional components are not supported with templates, they should use render functions."),e.exports=r.exports},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={stripe:{type:[String,Object],required:!0},value:{type:String,required:!1},options:{type:Object,required:!1}}},function(e,t){e.exports=function(e,t,n,r){var o,u=e=e||{},s=typeof e.default;"object"!==s&&"function"!==s||(o=e,u=e.default);var i="function"==typeof u?u.options:u;if(t&&(i.render=t.render,i.staticRenderFns=t.staticRenderFns),n&&(i._scopeId=n),r){var l=i.computed||(i.computed={});Object.keys(r).forEach(function(e){var t=r[e];l[e]=function(){return t}})}return{esModule:o,exports:u,options:i}}},function(e,t,n){"use strict";function r(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};"object"===(void 0===e?"undefined":s(e))&&"function"==typeof e.elements&&(i.instance=e),void 0===window.Stripe&&null===i.instance?console.error("Stripe V3 library not loaded!"):null===i.instance&&(i.instance=window.Stripe(e)),i.instance.elements?null===i.elements&&(i.elements=i.instance.elements(t)):console.error("Stripe V3 library not loaded!")}function o(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};r(t,n.elements||{}),n.style=Object.assign(l,n.style||{});var o=i.elements.create(e,n);return i.createToken=function(e){return i.instance.createToken(o,e)},i.createSource=function(e){return i.instance.createSource(o,e)},i.retrieveSource=function(e){return i.instance.retrieveSource(e)},o}function u(){i.instance=null,i.elements=null,i.createToken=null,i.createSource=null,i.retrieveSource=null}Object.defineProperty(t,"__esModule",{value:!0});var s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.create=o,t.destroy=u;var i=t.Stripe={instance:null,createToken:null,createSource:null,retrieveSource:null,elements:null},l=t.baseStyle={base:{color:"#32325d",lineHeight:"24px",fontFamily:"Helvetica Neue",fontSmoothing:"antialiased",fontSize:"16px","::placeholder":{color:"#aab7c4"}},invalid:{color:"#fa755a",iconColor:"#fa755a"}}},function(e,t,n){"use strict";"function"!=typeof Object.assign&&(Object.assign=function(e,t){if(null==e)throw new TypeError("Cannot convert undefined or null to object");for(var n=Object(e),r=1;r<arguments.length;r++){var o=arguments[r];if(null!=o)for(var u in o)Object.prototype.hasOwnProperty.call(o,u)&&(n[u]=o[u])}return n}),e.exports=Object.assign},function(e,t,n){var r=n(2)(n(10),n(22),null,null);r.options.__file="/Users/fromatob/Projects/vue-stripe-elements/src/Card.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__esModule"!==e})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] Card.vue: functional components are not supported with templates, they should use render functions."),e.exports=r.exports},function(e,t,n){var r=n(2)(n(11),n(19),null,null);r.options.__file="/Users/fromatob/Projects/vue-stripe-elements/src/CardCvc.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__esModule"!==e})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] CardCvc.vue: functional components are not supported with templates, they should use render functions."),e.exports=r.exports},function(e,t,n){var r=n(2)(n(12),n(21),null,null);r.options.__file="/Users/fromatob/Projects/vue-stripe-elements/src/CardExpiry.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__esModule"!==e})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] CardExpiry.vue: functional components are not supported with templates, they should use render functions."),e.exports=r.exports},function(e,t,n){var r=n(2)(n(13),n(20),null,null);r.options.__file="/Users/fromatob/Projects/vue-stripe-elements/src/CardNumber.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__esModule"!==e})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] CardNumber.vue: functional components are not supported with templates, they should use render functions."),e.exports=r.exports},function(e,t,n){var r=n(2)(n(14),n(17),null,null);r.options.__file="/Users/fromatob/Projects/vue-stripe-elements/src/PostalCode.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__esModule"!==e})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] PostalCode.vue: functional components are not supported with templates, they should use render functions."),e.exports=r.exports},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),u=r(o),s=n(0),i=r(s);t.default={props:u.default,components:{StripeElement:i.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),u=r(o),s=n(0),i=r(s);t.default={props:u.default,components:{StripeElement:i.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),u=r(o),s=n(0),i=r(s);t.default={props:u.default,components:{StripeElement:i.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),u=r(o),s=n(0),i=r(s);t.default={props:u.default,components:{StripeElement:i.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),u=r(o),s=n(0),i=r(s);t.default={props:u.default,components:{StripeElement:i.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(1),o=function(e){return e&&e.__esModule?e:{default:e}}(r),u=n(3);t.default={props:Object.assign({type:{type:String,required:!0}},o.default),beforeMount:function(){var e=this;this._element=(0,u.create)(this.type,this.stripe,this.options),this._element.on("blur",function(t){return e.$emit("blur")}),this._element.on("focus",function(t){return e.$emit("focus")}),this._element.on("change",function(t){return e.$emit("change",t)})},mounted:function(){var e=document.createElement("div");this._element.mount(e),this.$el.appendChild(e)},beforeDestroy:function(){this._element.unmount(),this._element.destroy(),(0,u.destroy)()},methods:{blur:function(){this._element.blur()},clear:function(){this._element.clear()},focus:function(){this._element.focus()},update:function(){this._element.update()}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}n(4);var o=n(3),u=n(0),s=r(u),i=n(5),l=r(i),c=n(7),f=r(c),a=n(6),p=r(a),d=n(8),m=r(d),v=n(9),h=r(v);e.exports={Card:l.default,CardNumber:m.default,CardExpiry:f.default,CardCvc:p.default,PostalCode:h.default,StripeElement:s.default,baseStyle:o.baseStyle,get instance(){return o.Stripe.instance},get createToken(){return o.Stripe.createToken},get createSource(){return o.Stripe.createSource},get retrieveSource(){return o.Stripe.retrieveSource}}},function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("stripe-element",{ref:"element",attrs:{type:"postalCode",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},empty:function(t){e.$emit("empty")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]},e.exports.render._withStripped=!0},function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("div")},staticRenderFns:[]},e.exports.render._withStripped=!0},function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("stripe-element",{ref:"element",attrs:{type:"cardCvc",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]},e.exports.render._withStripped=!0},function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("stripe-element",{ref:"element",attrs:{type:"cardNumber",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]},e.exports.render._withStripped=!0},function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("stripe-element",{ref:"element",attrs:{type:"cardExpiry",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]},e.exports.render._withStripped=!0},function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("stripe-element",{ref:"element",attrs:{type:"card",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]},e.exports.render._withStripped=!0}])});
+!function(e,t){ true?module.exports=t():undefined}(this,function(){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={exports:{},id:r,loaded:!1};return e[r].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}([function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}n(1);var o=n(2),u=n(3),i=r(u),s=n(8),c=r(s),l=n(11),f=r(l),a=n(14),p=r(a),d=n(17),m=r(d),b=n(20),v=r(b);e.exports={Card:c.default,CardNumber:m.default,CardExpiry:f.default,CardCvc:p.default,PostalCode:v.default,StripeElement:i.default,baseStyle:o.baseStyle,get instance(){return o.Stripe.instance},get createToken(){return o.Stripe.createToken},get createSource(){return o.Stripe.createSource},get retrieveSource(){return o.Stripe.retrieveSource}}},function(e,t){"use strict";"function"!=typeof Object.assign&&(Object.assign=function(e,t){if(null==e)throw new TypeError("Cannot convert undefined or null to object");for(var n=Object(e),r=1;r<arguments.length;r++){var o=arguments[r];if(null!=o)for(var u in o)Object.prototype.hasOwnProperty.call(o,u)&&(n[u]=o[u])}return n}),e.exports=Object.assign},function(e,t){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};"object"===("undefined"==typeof e?"undefined":u(e))&&"function"==typeof e.elements&&(i.instance=e),void 0===window.Stripe&&null===i.instance?console.error("Stripe V3 library not loaded!"):null===i.instance&&(i.instance=window.Stripe(e)),i.instance.elements?null===i.elements&&(i.elements=i.instance.elements(t)):console.error("Stripe V3 library not loaded!")}function r(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};n(t,r.elements||{}),r.style=Object.assign(s,r.style||{});var o=i.elements.create(e,r);return i.createToken=function(e){return i.instance.createToken(o,e)},i.createSource=function(e){return i.instance.createSource(o,e)},i.retrieveSource=function(e){return i.instance.retrieveSource(e)},o}function o(){i.instance=null,i.elements=null,i.createToken=null,i.createSource=null,i.retrieveSource=null}Object.defineProperty(t,"__esModule",{value:!0});var u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.create=r,t.destroy=o;var i=t.Stripe={instance:null,createToken:null,createSource:null,retrieveSource:null,elements:null},s=t.baseStyle={base:{color:"#32325d",lineHeight:"24px",fontFamily:"Helvetica Neue",fontSmoothing:"antialiased",fontSize:"16px","::placeholder":{color:"#aab7c4"}},invalid:{color:"#fa755a",iconColor:"#fa755a"}}},function(e,t,n){var r=n(4)(n(5),n(7),null,null);e.exports=r.exports},function(e,t){e.exports=function(e,t,n,r){var o,u=e=e||{},i=typeof e.default;"object"!==i&&"function"!==i||(o=e,u=e.default);var s="function"==typeof u?u.options:u;if(t&&(s.render=t.render,s.staticRenderFns=t.staticRenderFns),n&&(s._scopeId=n),r){var c=s.computed||(s.computed={});Object.keys(r).forEach(function(e){var t=r[e];c[e]=function(){return t}})}return{esModule:o,exports:u,options:s}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(6),u=r(o),i=n(2);t.default={props:Object.assign({type:{type:String,required:!0}},u.default),beforeMount:function(){var e=this;this._element=(0,i.create)(this.type,this.stripe,this.options),this._element.on("blur",function(t){return e.$emit("blur")}),this._element.on("focus",function(t){return e.$emit("focus")}),this._element.on("change",function(t){return e.$emit("change",t)})},mounted:function(){var e=document.createElement("div");this._element.mount(e),this.$el.appendChild(e)},beforeDestroy:function(){this._element.unmount(),this._element.destroy(),(0,i.destroy)()},methods:{blur:function(){this._element.blur()},clear:function(){this._element.clear()},focus:function(){this._element.focus()},update:function(){this._element.update()}}}},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={stripe:{type:[String,Object],required:!0},value:{type:String,required:!1},options:{type:Object,required:!1}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div")},staticRenderFns:[]}},function(e,t,n){var r=n(4)(n(9),n(10),null,null);e.exports=r.exports},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(6),u=r(o),i=n(3),s=r(i);t.default={props:u.default,components:{StripeElement:s.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("stripe-element",{ref:"element",attrs:{type:"card",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]}},function(e,t,n){var r=n(4)(n(12),n(13),null,null);e.exports=r.exports},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(6),u=r(o),i=n(3),s=r(i);t.default={props:u.default,components:{StripeElement:s.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("stripe-element",{ref:"element",attrs:{type:"cardExpiry",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]}},function(e,t,n){var r=n(4)(n(15),n(16),null,null);e.exports=r.exports},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(6),u=r(o),i=n(3),s=r(i);t.default={props:u.default,components:{StripeElement:s.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("stripe-element",{ref:"element",attrs:{type:"cardCvc",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]}},function(e,t,n){var r=n(4)(n(18),n(19),null,null);e.exports=r.exports},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(6),u=r(o),i=n(3),s=r(i);t.default={props:u.default,components:{StripeElement:s.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("stripe-element",{ref:"element",attrs:{type:"cardNumber",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]}},function(e,t,n){var r=n(4)(n(21),n(22),null,null);e.exports=r.exports},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(6),u=r(o),i=n(3),s=r(i);t.default={props:u.default,components:{StripeElement:s.default},methods:{blur:function(){this.$refs.element.blur()},clear:function(){this.$refs.element.clear()},focus:function(){this.$refs.element.focus()},update:function(e){this.$refs.element.update(e)}}}},function(e,t){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("stripe-element",{ref:"element",attrs:{type:"postalCode",stripe:e.stripe,value:e.value,options:e.options},on:{blur:function(t){e.$emit("blur")},focus:function(t){e.$emit("focus")},empty:function(t){e.$emit("empty")},change:function(t){e.$emit("change",t)}}})},staticRenderFns:[]}}])});
 
 /***/ }),
 
